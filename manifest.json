@@ -1,24 +1,20 @@
 {
-    "name": "bunken",
-    "version": "2.0",
-    "manifest_version": 2,
-    "browser_action": {
-        "default_icon": "./icon.png",
-        "default_title": "bunken"
-    },
-    "icons": {
-        "300": "./icon.png"
-    },
-    "content_scripts": [{
-        "matches": ["https://www.goodreads.com/book/show/*"],
-        "js": ["support/goodreads/content.js"],
-        "run_at": "document_end"
-    }],
-    "web_accessible_resources": ["support/goodreads/script.js"],
-    "permissions": [
-        "*://libgen.is/*",
-        "*://goodreads.com/*",
-        "*://api.bunken.tk/*",
-        "tabs"
-    ]
+  "manifest_version": 2,
+  "name": "Bunken",
+  "version": "1.0.1",
+
+  "description": "A firefox extension to download ebooks directly from Goodreads.",
+
+  "icons": {
+    "48": "./icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.goodreads.com/book/show/*"],
+      "js": ["support/goodreads/script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["*://goodreads.com/*", "*://api.bunken.tk/*", "tabs"]
 }
