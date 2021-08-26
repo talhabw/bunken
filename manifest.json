@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Bunken",
-  "version": "1.0.1",
+  "version": "1.0.4",
 
   "description": "A firefox extension to download ebooks directly from Goodreads.",
 
@@ -12,9 +12,15 @@
   "content_scripts": [
     {
       "matches": ["https://www.goodreads.com/book/show/*"],
-      "js": ["support/goodreads/script.js"],
+      "js": ["support/goodreads/content.js"],
       "run_at": "document_end"
     }
   ],
-  "permissions": ["*://goodreads.com/*", "*://api.bunken.tk/*", "tabs"]
+  "web_accessible_resources": ["support/goodreads/script.js"],
+  "permissions": [
+    "*://libgen.is/*",
+    "*://goodreads.com/*",
+    "*://api.bunken.tk/*",
+    "tabs"
+  ]
 }
